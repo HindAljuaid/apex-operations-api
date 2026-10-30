@@ -45,3 +45,13 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t apex-operations-api:ci .
+
+      - name: Scan Docker image with Trivy
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          image-ref: apex-operations-api:ci
+          format: table
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          vuln-type: os,library
+          exit-code: '1'
