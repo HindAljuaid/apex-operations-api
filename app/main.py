@@ -37,7 +37,7 @@ app = FastAPI(
     lifespan=lifespan,
     title="Apex Operations API",
     description="A demonstration API for DevOps engineering practices.",
-    version="1.0.0",
+    version="1.0.1",
 )
 
 @app.middleware("http")
@@ -80,7 +80,7 @@ def root():
     return {
         "application": "Apex Operations API",
         "status": "running",
-        "version": "1.0.0",
+        "version": "1.0.1",
     }
 
 
